@@ -2,20 +2,29 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Loading from './components/Loading_Screen/Loading';
+import {
+  BrowserRouter,
+  Route,
+  Link
+  } from 'react-router-dom'
 
 
 
 class App extends Component {
-  handleClick = () => {
-    console.log('this is:', this);
+
+  handleClickLogin = () => {
+    console.log('this is login:', this);
   }
+
+  handleClickCreate = () => {
+    console.log('this is create:', this);
+  }
+
   render() {
     return (
       <div className="App">
-        <Loading />
-        <button onClick={this.handleClick}>
-          Click me
-        </button>
+        <Loading clicked_login={this.handleClickLogin}
+          clicked_create={this.handleClickCreate} />
       </div>
     );
   }
